@@ -706,3 +706,9 @@ WARNING 2018-11-17 17:32:32,837 basehttp 124 "POST /authorizations/ HTTP/1.1" 40
 INFO 2018-11-17 19:05:18,912 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 210
 INFO 2018-11-17 19:05:50,561 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 204
 INFO 2018-11-17 19:06:32,700 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 204
+WARNING 2018-11-17 19:16:23,168 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 67
+WARNING 2018-11-17 19:17:51,369 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 67
+WARNING 2018-11-17 19:20:07,021 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 67
+INFO 2018-11-17 19:20:21,415 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 204
+WARNING 2018-11-17 19:20:36,563 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 67
+INFO 2018-11-17 19:20:43,003 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 204
