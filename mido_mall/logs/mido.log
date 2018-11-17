@@ -703,3 +703,6 @@ INFO 2018-11-17 17:25:17,133 basehttp 124 "GET /sms_codes/15812341240/ HTTP/1.1"
 INFO 2018-11-17 17:25:35,285 basehttp 124 "POST /users/ HTTP/1.1" 201 222
 WARNING 2018-11-17 17:32:25,443 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 108
 WARNING 2018-11-17 17:32:32,837 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 67
+INFO 2018-11-17 19:05:18,912 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 210
+INFO 2018-11-17 19:05:50,561 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 204
+INFO 2018-11-17 19:06:32,700 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 204
