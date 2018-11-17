@@ -10,6 +10,7 @@ from django.conf import settings
 from rest_framework_jwt.settings import api_settings
 
 from .models import OAuthQQUser
+from.utils import generate_save_user_token
 
 
 class QQAuthURLView(APIView):
@@ -83,6 +84,16 @@ class QQAuthUserView(APIView):
             })
         else:
             return Response({
-                # 'access_token': generate_save_user_token(openid)  #
-                'access_token': openid  # 加密
+                'access_token': generate_save_user_token(openid)  #加密
+                # 'access_token': openid  # 加密
             })
+
+    def post(self, request):
+        """
+        客户端提交的数据
+        1. mobile,password,sms_code,access_token
+
+        :param request:
+        :return:
+        """
+        pass
