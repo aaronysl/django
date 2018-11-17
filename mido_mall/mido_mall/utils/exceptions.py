@@ -24,7 +24,7 @@ def exception_handler(exc, context):
     if not response:
         # 自己处理
         logging.error('[%s] %s' % (context['view'], exc))
-        if isinstance(exc, DatabaseError) or isinstance(RedisError):
+        if isinstance(exc, DatabaseError) or isinstance(exc, RedisError):
             return Response({'error': "服务内部异常"}, status=507)  # 507代表数据库异常
 
     return response

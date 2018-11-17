@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import sys
+import datetime
 # print(sys.path)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -29,7 +30,7 @@ SECRET_KEY = 'a$76+g%vk&%a--&huk-5nxes2ey)xe=_)-m0a#4_oj6-77^j%+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,11 +44,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #注册DRF子应用 rest_framework
     'rest_framework',
+    #注册cors
+    'corsheaders',
 
     'users.apps.UsersConfig',
+    'verifications.apps.VerificationsConfig',
 ]
 
 MIDDLEWARE = [
+
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -140,14 +147,21 @@ STATIC_URL = '/static/'
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://10.211.55.5:6379/0",
+        "LOCATION": "redis://127.0.0.1:6379/0",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     },
     "session": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://10.211.55.5:6379/1",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    },
+    'verifications':{
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/2",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
@@ -205,8 +219,29 @@ LOGGING = {
 REST_FRAMEWORK = {
     # 异常处理
     'EXCEPTION_HANDLER': 'mido_mall.utils.exceptions.exception_handler',
+    #认证方式
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+}
+
+#token 过期时间
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
 }
 
 #配置自定义认证模型类
 AUTH_USER_MODEL = 'users.User'
+
+
+# CORS
+CORS_ORIGIN_WHITELIST = (
+    '127.0.0.1:8080',
+    'localhost:8080',
+    'www.mido.site:8080',
+    'api.mido.site:8000',
+)
+CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
 
