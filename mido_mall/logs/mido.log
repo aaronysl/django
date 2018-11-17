@@ -714,3 +714,4 @@ WARNING 2018-11-17 19:20:36,563 basehttp 124 "POST /authorizations/ HTTP/1.1" 40
 INFO 2018-11-17 19:20:43,003 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 204
 INFO 2018-11-17 19:49:37,197 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 204
 INFO 2018-11-17 19:49:46,823 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 204
+INFO 2018-11-17 20:50:06,770 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
