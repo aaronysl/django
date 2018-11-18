@@ -11,6 +11,7 @@ from rest_framework_jwt.settings import api_settings
 
 from .models import OAuthQQUser
 from.utils import generate_save_user_token
+from .serializers import QQAuthUserSerializer
 
 
 class QQAuthURLView(APIView):
@@ -96,4 +97,24 @@ class QQAuthUserView(APIView):
         :param request:
         :return:
         """
-        pass
+        data=request.data
+
+        serializer=QQAuthUserSerializer(data=data)
+
+        serializer.is_valid(raise_exception=True)
+
+        oauth_user=serializer.save()
+
+        username=oauth_user.user.username
+        user_id=oauth_user.user.id
+        jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
+        jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
+
+        payload = jwt_payload_handler(oauth_user.user)
+        token = jwt_encode_handler(payload)
+
+        return Response({
+            'username':username,
+            'user_id':user_id,
+            'token':token
+        })
