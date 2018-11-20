@@ -141,3 +141,38 @@ class UserEmailApi(GenericAPIView):
 
         return Response({'message':'OK'})
 
+
+# GET/PUT  emails/verification/?token=token
+# url(r'^emails/verification/$',EmailVerifyApi.as_view())
+class EmailVerifyApi(APIView):
+    def get(self,request):
+        token=request.query_params.get('token',False)
+        if not token:
+            return Response({'message': "必须传递token"}, status=400)
+
+        #解析token
+        from django.conf import settings
+        from itsdangerous import TimedJSONWebSignatureSerializer as TS
+
+        ts = TS(settings.SECRET_KEY, expires_in=60 * 60 * 1)  # 邮箱验证过期时间1小时
+
+        try:
+            data=ts.loads(token)
+        except Exception:
+            return Response({'message':'token无效'},status=400)
+        #查询需要激活的用户
+        user_id=data['user_id']
+        email=data['email']
+
+        try:
+            user=User.objects.get(id=user_id,email=email)
+        except Exception:
+            return Response({'message': 'token无效'}, status=400)
+        #激活邮箱
+        user.email_active=True
+        user.save()
+        return Response({'message':'OK'})
+
+
+
+
