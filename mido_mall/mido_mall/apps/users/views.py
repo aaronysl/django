@@ -114,8 +114,17 @@ class UserEmailApi(GenericAPIView):
         #给邮箱发送邮件
         from django.core.mail import send_mail
         from django.conf import settings
+        from itsdangerous import TimedJSONWebSignatureSerializer as TS
 
-        token='test_token'    #加密的数据
+
+        ts=TS(settings.SECRET_KEY,expires_in=60*60*1)   #邮箱验证过期时间1小时
+        data={
+            'user_id':user.id,
+            'email':email
+        }
+        token=ts.dumps(data).decode()
+
+        # token='test_token'    #加密的数据
         subject='MIDO_MALL 邮箱验证'
         message=''
         from_email=settings.EMAIL_FROM

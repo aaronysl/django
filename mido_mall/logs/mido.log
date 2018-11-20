@@ -859,3 +859,16 @@ WARNING 2018-11-20 19:01:19,459 base 152 Not Found: /browse_histories/
 WARNING 2018-11-20 19:01:19,460 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3151
 INFO 2018-11-20 20:10:16,662 basehttp 124 "OPTIONS /email/ HTTP/1.1" 200 0
 INFO 2018-11-20 20:10:17,506 basehttp 124 "PUT /email/ HTTP/1.1" 200 16
+INFO 2018-11-20 20:22:11,840 basehttp 124 "OPTIONS /authorizations/ HTTP/1.1" 200 0
+INFO 2018-11-20 20:22:12,037 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 226
+INFO 2018-11-20 20:22:12,219 basehttp 124 "OPTIONS /user/ HTTP/1.1" 200 0
+INFO 2018-11-20 20:22:12,279 basehttp 124 "GET /user/ HTTP/1.1" 200 98
+INFO 2018-11-20 20:22:12,412 basehttp 124 "OPTIONS /browse_histories/ HTTP/1.1" 200 0
+WARNING 2018-11-20 20:22:12,474 base 152 Not Found: /browse_histories/
+WARNING 2018-11-20 20:22:12,475 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3307
+INFO 2018-11-20 20:22:16,476 basehttp 124 "OPTIONS /email/ HTTP/1.1" 200 0
+INFO 2018-11-20 20:22:17,039 basehttp 124 "PUT /email/ HTTP/1.1" 200 16
+WARNING 2018-11-20 20:22:29,871 base 152 Not Found: /emails/verification/
+WARNING 2018-11-20 20:22:29,873 basehttp 124 "GET /emails/verification/?token=eyJhbGciOiJIUzUxMiIsImlhdCI6MTU0MjcxNjUzNiwiZXhwIjoxNTQyNzIwMTM2fQ.eyJ1c2VyX2lkIjozLCJlbWFpbCI6Ijg3MTY5Mjc0NkBxcS5jb20ifQ.sE2ACqCqn3pb8FnFmEzptE9_s301Wv1jeML2MNG1WVWUeI9GYN69zbumTM6mJo1FNvvyuvpao_0_BD4t4sHNlg HTTP/1.1" 404 3531
+WARNING 2018-11-20 20:22:38,302 base 152 Not Found: /emails/verification/
+WARNING 2018-11-20 20:22:38,303 basehttp 124 "GET /emails/verification/?token=eyJhbGciOiJIUzUxMiIsImlhdCI6MTU0MjcxNjUzNiwiZXhwIjoxNTQyNzIwMTM2fQ.eyJ1c2VyX2lkIjozLCJlbWFpbCI6Ijg3MTY5Mjc0NkBxcS5jb20ifQ.sE2ACqCqn3pb8FnFmEzptE9_s301Wv1jeML2MNG1WVWUeI9GYN69zbumTM6mJo1FNvvyuvpao_0_BD4t4sHNlg HTTP/1.1" 404 3531
