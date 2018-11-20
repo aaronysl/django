@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_jwt.settings import api_settings
 from django.db.models import Q
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.generics import GenericAPIView,RetrieveAPIView
 
 from .models import User
 from . import serializers
@@ -74,3 +76,23 @@ class LoginApiView(APIView):
                 })
             return Response({'message':'用户名或密码错误'},status=400)
 
+
+#GET /User/
+#url(r'user/',UserDetailView.as_view())
+class UserDetailView(RetrieveAPIView):
+    """
+        用户详情
+    """
+    serializer_class = serializers.UserDetailSerializer
+    permission_classes =(IsAuthenticated,)
+
+    def get_object(self):
+        return self.request.user
+
+    # def get(self,request,pk):
+    #
+    #     user=self.get_object()
+    #
+    #     us=self.get_serializer(user)
+    #
+    #     return Response(data=us.data)

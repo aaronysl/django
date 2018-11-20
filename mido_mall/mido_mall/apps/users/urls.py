@@ -9,4 +9,5 @@ urlpatterns=[
     url(r'^users/$', views.UserView.as_view()),
     # url(r'^authorizations/$', views.LoginApiView.as_view()),
     url(r'^authorizations/$', obtain_jwt_token),
+    url(r'^user/$',views.UserDetailView.as_view())
 ]

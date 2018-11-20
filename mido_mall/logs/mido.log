@@ -730,3 +730,130 @@ INFO 2018-11-18 17:04:13,096 basehttp 124 "GET /oauth/qq/authorization/?next=/ H
 INFO 2018-11-18 18:33:32,197 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
 INFO 2018-11-18 18:33:48,745 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
 INFO 2018-11-18 18:33:53,244 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-18 19:36:31,096 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-18 19:41:28,714 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-18 19:41:52,674 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-20 16:28:51,375 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-20 16:33:26,431 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-20 16:41:26,879 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-20 16:41:37,075 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-20 16:41:38,963 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-20 16:41:40,087 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-20 16:42:24,363 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-20 16:43:40,410 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-20 16:50:28,753 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-20 16:50:44,493 basehttp 124 "GET /oauth/qq/user/?code=41596B36114ECBEAE3D95EB813789850 HTTP/1.1" 200 233
+ERROR 2018-11-20 16:50:58,881 exception 135 Internal Server Error: /oauth/qq/user/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/oauth/views.py", line 64, in get
+    access_token = oauth.get_access_token(code)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/QQLoginTool/QQtool.py", line 63, in get_access_token
+    raise Exception('access_token获取失败')
+Exception: access_token获取失败
+ERROR 2018-11-20 16:50:58,998 basehttp 124 "GET /oauth/qq/user/?code=41596B36114ECBEAE3D95EB813789850 HTTP/1.1" 500 16860
+ERROR 2018-11-20 16:50:59,902 exception 135 Internal Server Error: /oauth/qq/user/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/oauth/views.py", line 64, in get
+    access_token = oauth.get_access_token(code)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/QQLoginTool/QQtool.py", line 63, in get_access_token
+    raise Exception('access_token获取失败')
+Exception: access_token获取失败
+ERROR 2018-11-20 16:50:59,930 basehttp 124 "GET /oauth/qq/user/?code=41596B36114ECBEAE3D95EB813789850 HTTP/1.1" 500 16860
+INFO 2018-11-20 16:52:50,217 basehttp 124 "GET /oauth/qq/user/?code=F7F509C45BC997581446BC806781F326 HTTP/1.1" 200 233
+INFO 2018-11-20 16:53:02,317 basehttp 124 "GET /oauth/qq/user/?code=12F672C4ED328C6A2F1E89437C7F6E98 HTTP/1.1" 200 233
+ERROR 2018-11-20 16:53:40,781 exception 135 Internal Server Error: /oauth/qq/user/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/oauth/views.py", line 64, in get
+    access_token = oauth.get_access_token(code)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/QQLoginTool/QQtool.py", line 63, in get_access_token
+    raise Exception('access_token获取失败')
+Exception: access_token获取失败
+ERROR 2018-11-20 16:53:40,964 basehttp 124 "GET /oauth/qq/user/?code=12F672C4ED328C6A2F1E89437C7F6E98 HTTP/1.1" 500 16860
+INFO 2018-11-20 16:58:38,928 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+ERROR 2018-11-20 16:59:46,508 exception 135 Internal Server Error: /oauth/qq/user/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/oauth/views.py", line 64, in get
+    access_token = oauth.get_access_token(code)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/QQLoginTool/QQtool.py", line 63, in get_access_token
+    raise Exception('access_token获取失败')
+Exception: access_token获取失败
+ERROR 2018-11-20 16:59:46,673 basehttp 124 "GET /oauth/qq/user/?code=9B9CA63529C97D7083313D1D2CDF15D9 HTTP/1.1" 500 16852
+INFO 2018-11-20 17:03:02,538 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-20 17:03:07,810 basehttp 124 "GET /oauth/qq/user/?code=E35DBEBF5E21894C0E8FA47514EDE874 HTTP/1.1" 200 233
+INFO 2018-11-20 17:03:18,631 basehttp 124 "GET /sms_codes/15812341240/ HTTP/1.1" 200 16
+INFO 2018-11-20 17:03:41,301 basehttp 124 "OPTIONS /oauth/qq/user/ HTTP/1.1" 200 0
+INFO 2018-11-20 17:03:41,481 basehttp 124 "POST /oauth/qq/user/ HTTP/1.1" 200 204
+INFO 2018-11-20 17:08:19,387 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 173
+INFO 2018-11-20 17:10:25,733 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-20 17:10:37,538 basehttp 124 "GET /oauth/qq/user/?code=BD13E2608CD492B18FA04D20D240104F HTTP/1.1" 200 204
+INFO 2018-11-20 18:59:41,219 basehttp 124 "OPTIONS /authorizations/ HTTP/1.1" 200 0
+INFO 2018-11-20 18:59:41,456 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 204
+INFO 2018-11-20 19:01:19,188 basehttp 124 "OPTIONS /user/ HTTP/1.1" 200 0
+INFO 2018-11-20 19:01:19,298 basehttp 124 "GET /user/ HTTP/1.1" 200 82
+INFO 2018-11-20 19:01:19,412 basehttp 124 "OPTIONS /browse_histories/ HTTP/1.1" 200 0
+WARNING 2018-11-20 19:01:19,459 base 152 Not Found: /browse_histories/
+WARNING 2018-11-20 19:01:19,460 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3151

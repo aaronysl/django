@@ -26,6 +26,14 @@ var vm = new Vue({
                 })
                 .then(response => {
                     // 加载用户数据
+                    // 加载用户数据
+                    /*
+                    - id
+                    - username
+                    - mobile
+                    - email
+                    - email_active
+                     */
                     this.user_id = response.data.id;
                     this.username = response.data.username;
                     this.mobile = response.data.mobile;
