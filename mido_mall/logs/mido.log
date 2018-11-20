@@ -857,3 +857,5 @@ INFO 2018-11-20 19:01:19,298 basehttp 124 "GET /user/ HTTP/1.1" 200 82
 INFO 2018-11-20 19:01:19,412 basehttp 124 "OPTIONS /browse_histories/ HTTP/1.1" 200 0
 WARNING 2018-11-20 19:01:19,459 base 152 Not Found: /browse_histories/
 WARNING 2018-11-20 19:01:19,460 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3151
+INFO 2018-11-20 20:10:16,662 basehttp 124 "OPTIONS /email/ HTTP/1.1" 200 0
+INFO 2018-11-20 20:10:17,506 basehttp 124 "PUT /email/ HTTP/1.1" 200 16

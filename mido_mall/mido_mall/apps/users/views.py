@@ -96,3 +96,39 @@ class UserDetailView(RetrieveAPIView):
     #     us=self.get_serializer(user)
     #
     #     return Response(data=us.data)
+
+
+# PUT /email/
+# url(r'^email/$',UserEmailApi.as_view())
+class UserEmailApi(GenericAPIView):
+    permission_classes = (IsAuthenticated,)
+
+    def get_object(self):
+        return self.request.user
+
+    def put(self,request):
+        user=self.get_object()
+        email=request.data.get('email','')
+        user.email=email
+        user.save()
+        #给邮箱发送邮件
+        from django.core.mail import send_mail
+        from django.conf import settings
+
+        token='test_token'    #加密的数据
+        subject='MIDO_MALL 邮箱验证'
+        message=''
+        from_email=settings.EMAIL_FROM
+        recipient_list=[email]
+        html_message='''
+        尊敬的用户你好！</br>
+        感谢你使用MIDO_MALL</br>
+        你的邮箱为%s,请点击链接激活你的邮箱.</br>
+        <a href='http://www.meiduo.site:8080/success_verify_email.html?token=%s' >http://www.meiduo.site:8080/success_verify_email.html?token=%s</a>
+        
+        '''% (email,token,token)
+
+        send_mail(subject,message,from_email,recipient_list,html_message=html_message)
+
+        return Response({'message':'OK'})
+
