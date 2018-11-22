@@ -4,6 +4,8 @@ from celery import Celery
 import os
 if not os.getenv('DJANGO_SETTINGS_MODULE'):
     os.environ['DJANGO_SETTINGS_MODULE'] = 'mido_mall.settings.dev'
+    import django
+    django.setup()  #初始化Django 链接服务器
 
 # 创建celery应用ls
 app = Celery('mido')
@@ -12,4 +14,4 @@ app = Celery('mido')
 app.config_from_object('celery_tasks.config')
 
 # 自动注册celery任务
-app.autodiscover_tasks(['celery_tasks.sms'])
+app.autodiscover_tasks(['celery_tasks.sms','celery_tasks.send_mails'])

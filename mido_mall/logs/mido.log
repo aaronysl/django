@@ -883,3 +883,138 @@ INFO 2018-11-20 20:40:41,649 basehttp 124 "GET /emails/verification/?token=eyJhb
 INFO 2018-11-20 20:41:18,922 basehttp 124 "GET /user/ HTTP/1.1" 200 97
 WARNING 2018-11-20 20:41:18,980 base 152 Not Found: /browse_histories/
 WARNING 2018-11-20 20:41:18,981 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3477
+INFO 2018-11-22 00:20:06,711 basehttp 124 "OPTIONS /authorizations/ HTTP/1.1" 200 0
+WARNING 2018-11-22 00:20:06,904 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 49
+WARNING 2018-11-22 00:20:27,483 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 49
+WARNING 2018-11-22 00:20:54,149 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 49
+WARNING 2018-11-22 00:21:01,271 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 67
+WARNING 2018-11-22 00:22:00,566 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 67
+WARNING 2018-11-22 00:22:01,334 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 67
+WARNING 2018-11-22 00:22:03,530 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 67
+WARNING 2018-11-22 00:22:14,540 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 49
+INFO 2018-11-22 00:23:20,056 basehttp 124 "OPTIONS /authorizations/ HTTP/1.1" 200 0
+WARNING 2018-11-22 00:23:20,246 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 49
+WARNING 2018-11-22 00:23:42,991 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 49
+INFO 2018-11-22 00:23:48,989 basehttp 124 "GET /usernames/15812341222/count/ HTTP/1.1" 200 36
+INFO 2018-11-22 00:24:00,202 basehttp 124 "GET /mobiles/15812341222/count/ HTTP/1.1" 200 34
+INFO 2018-11-22 00:24:00,215 basehttp 124 "GET /mobiles/15812341222/count/ HTTP/1.1" 200 34
+INFO 2018-11-22 00:24:00,433 basehttp 124 "GET /sms_codes/15812341222/ HTTP/1.1" 200 16
+INFO 2018-11-22 00:24:29,056 basehttp 124 "OPTIONS /users/ HTTP/1.1" 200 0
+INFO 2018-11-22 00:24:29,080 basehttp 124 "GET /mobiles/15812341222/count/ HTTP/1.1" 200 34
+INFO 2018-11-22 00:24:29,080 basehttp 124 "GET /usernames/15812341222/count/ HTTP/1.1" 200 36
+INFO 2018-11-22 00:24:29,188 basehttp 124 "POST /users/ HTTP/1.1" 201 236
+INFO 2018-11-22 00:24:32,397 basehttp 124 "OPTIONS /user/ HTTP/1.1" 200 0
+INFO 2018-11-22 00:24:32,486 basehttp 124 "GET /user/ HTTP/1.1" 200 88
+INFO 2018-11-22 00:24:32,535 basehttp 124 "OPTIONS /browse_histories/ HTTP/1.1" 200 0
+WARNING 2018-11-22 00:24:32,570 base 152 Not Found: /browse_histories/
+WARNING 2018-11-22 00:24:32,571 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3477
+INFO 2018-11-22 00:24:39,617 basehttp 124 "OPTIONS /email/ HTTP/1.1" 200 0
+INFO 2018-11-22 00:24:40,897 basehttp 124 "PUT /email/ HTTP/1.1" 200 16
+INFO 2018-11-22 00:24:41,773 basehttp 124 "PUT /email/ HTTP/1.1" 200 16
+WARNING 2018-11-22 00:26:39,636 basehttp 124 "POST /authorizations/ HTTP/1.1" 400 49
+INFO 2018-11-22 00:27:00,865 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 240
+INFO 2018-11-22 16:50:23,086 basehttp 124 "OPTIONS /authorizations/ HTTP/1.1" 200 0
+INFO 2018-11-22 16:50:23,316 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 240
+INFO 2018-11-22 16:50:25,396 basehttp 124 "OPTIONS /user/ HTTP/1.1" 200 0
+INFO 2018-11-22 16:50:25,541 basehttp 124 "GET /user/ HTTP/1.1" 200 104
+INFO 2018-11-22 16:50:25,675 basehttp 124 "OPTIONS /browse_histories/ HTTP/1.1" 200 0
+WARNING 2018-11-22 16:50:25,747 base 152 Not Found: /browse_histories/
+WARNING 2018-11-22 16:50:25,748 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3477
+INFO 2018-11-22 16:50:29,221 basehttp 124 "OPTIONS /email/ HTTP/1.1" 200 0
+INFO 2018-11-22 16:50:30,493 basehttp 124 "PUT /email/ HTTP/1.1" 200 16
+INFO 2018-11-22 16:50:44,134 basehttp 124 "GET /emails/verification/?token=eyJhbGciOiJIUzUxMiIsImlhdCI6MTU0Mjg3NjYyOSwiZXhwIjoxNTQyODgwMjI5fQ.eyJ1c2VyX2lkIjo1LCJlbWFpbCI6Ijg3MTY5Mjc0NkBxcS5jb20ifQ.BXObC6AwCZQZBxVB7nL9upozQQltW0DCalC2_vXkK_RKoJTKycZrX7qlA4qUabod51z6qPcOa5fd3rdazz-nIA HTTP/1.1" 200 16
+INFO 2018-11-22 16:50:55,268 basehttp 124 "GET /user/ HTTP/1.1" 200 103
+WARNING 2018-11-22 16:50:55,308 base 152 Not Found: /browse_histories/
+WARNING 2018-11-22 16:50:55,309 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3477
+INFO 2018-11-22 17:11:46,036 basehttp 124 "OPTIONS /authorizations/ HTTP/1.1" 200 0
+INFO 2018-11-22 17:11:46,239 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 240
+INFO 2018-11-22 17:11:48,814 basehttp 124 "OPTIONS /user/ HTTP/1.1" 200 0
+INFO 2018-11-22 17:11:48,884 basehttp 124 "GET /user/ HTTP/1.1" 200 103
+INFO 2018-11-22 17:11:48,943 basehttp 124 "OPTIONS /browse_histories/ HTTP/1.1" 200 0
+WARNING 2018-11-22 17:11:48,986 base 152 Not Found: /browse_histories/
+WARNING 2018-11-22 17:11:48,987 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3477
+INFO 2018-11-22 17:12:07,161 basehttp 124 "GET /user/ HTTP/1.1" 200 104
+WARNING 2018-11-22 17:12:07,189 base 152 Not Found: /browse_histories/
+WARNING 2018-11-22 17:12:07,191 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3477
+WARNING 2018-11-22 17:15:24,283 tasks 22 发送验证码短信[失败][ mobile: 15812341222 ]
+INFO 2018-11-22 17:16:15,453 basehttp 124 "OPTIONS /email/ HTTP/1.1" 200 0
+ERROR 2018-11-22 17:16:15,742 exception 135 Internal Server Error: /email/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/kombu/serialization.py", line 50, in _reraise_errors
+    yield
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/kombu/serialization.py", line 221, in dumps
+    payload = encoder(data)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/kombu/utils/json.py", line 69, in dumps
+    **dict(default_kwargs, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/kombu/utils/json.py", line 59, in default
+    return super(JSONEncoder, self).default(o)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'User' is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/users/views.py", line 142, in put
+    send_email.delay(user)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/celery/app/task.py", line 408, in delay
+    return self.apply_async(args, kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/celery/app/task.py", line 535, in apply_async
+    **options
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/celery/app/base.py", line 745, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/celery/app/amqp.py", line 552, in send_task_message
+    **properties
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/kombu/messaging.py", line 169, in publish
+    compression, headers)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/kombu/messaging.py", line 252, in _prepare
+    body) = dumps(body, serializer=serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/kombu/serialization.py", line 221, in dumps
+    payload = encoder(data)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/contextlib.py", line 99, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/kombu/serialization.py", line 54, in _reraise_errors
+    reraise(wrapper, wrapper(exc), sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/vine/five.py", line 178, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/kombu/serialization.py", line 50, in _reraise_errors
+    yield
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/kombu/serialization.py", line 221, in dumps
+    payload = encoder(data)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/kombu/utils/json.py", line 69, in dumps
+    **dict(default_kwargs, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/kombu/utils/json.py", line 59, in default
+    return super(JSONEncoder, self).default(o)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+kombu.exceptions.EncodeError: Object of type 'User' is not JSON serializable
+ERROR 2018-11-22 17:16:15,896 basehttp 124 "PUT /email/ HTTP/1.1" 500 20697
+INFO 2018-11-22 17:20:45,820 basehttp 124 "PUT /email/ HTTP/1.1" 200 16
