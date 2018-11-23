@@ -1142,3 +1142,14 @@ INFO 2018-11-23 20:36:37,249 basehttp 124 "PUT /addresses/2/status/ HTTP/1.1" 20
 INFO 2018-11-23 20:36:40,931 basehttp 124 "GET /areas/140000/ HTTP/1.1" 200 404
 INFO 2018-11-23 20:36:43,345 basehttp 124 "GET /areas/140200/ HTTP/1.1" 200 404
 INFO 2018-11-23 20:36:50,297 basehttp 124 "GET /areas/140500/ HTTP/1.1" 200 404
+INFO 2018-11-23 20:44:26,672 basehttp 124 "OPTIONS /cart/ HTTP/1.1" 200 0
+WARNING 2018-11-23 20:44:26,726 base 152 Not Found: /categories/115/hotskus/
+WARNING 2018-11-23 20:44:26,732 base 152 Not Found: /categories/115/skus/
+WARNING 2018-11-23 20:44:26,737 base 152 Not Found: /categories/115/
+WARNING 2018-11-23 20:44:26,741 base 152 Not Found: /cart/
+WARNING 2018-11-23 20:44:26,743 basehttp 124 "GET /categories/115/hotskus/ HTTP/1.1" 404 4673
+WARNING 2018-11-23 20:44:26,744 basehttp 124 "GET /categories/115/ HTTP/1.1" 404 4649
+WARNING 2018-11-23 20:44:26,744 basehttp 124 "GET /categories/115/skus/?page=1&page_size=5&ordering=-create_time HTTP/1.1" 404 4713
+WARNING 2018-11-23 20:44:26,746 basehttp 124 "GET /cart/ HTTP/1.1" 404 4619
+WARNING 2018-11-23 20:44:28,377 base 152 Not Found: /categories/115/skus/
+WARNING 2018-11-23 20:44:28,378 basehttp 124 "GET /categories/115/skus/?page=1&page_size=5&ordering=price HTTP/1.1" 404 4706
