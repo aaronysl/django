@@ -1018,3 +1018,33 @@ Traceback (most recent call last):
 kombu.exceptions.EncodeError: Object of type 'User' is not JSON serializable
 ERROR 2018-11-22 17:16:15,896 basehttp 124 "PUT /email/ HTTP/1.1" 500 20697
 INFO 2018-11-22 17:20:45,820 basehttp 124 "PUT /email/ HTTP/1.1" 200 16
+INFO 2018-11-22 21:07:36,685 basehttp 124 "OPTIONS /authorizations/ HTTP/1.1" 200 0
+INFO 2018-11-22 21:07:36,906 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 240
+INFO 2018-11-22 21:07:39,873 basehttp 124 "OPTIONS /user/ HTTP/1.1" 200 0
+INFO 2018-11-22 21:07:39,990 basehttp 124 "GET /user/ HTTP/1.1" 200 104
+INFO 2018-11-22 21:07:40,065 basehttp 124 "OPTIONS /browse_histories/ HTTP/1.1" 200 0
+WARNING 2018-11-22 21:07:40,143 base 152 Not Found: /browse_histories/
+WARNING 2018-11-22 21:07:40,144 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3477
+INFO 2018-11-22 21:07:41,433 basehttp 124 "OPTIONS /email/ HTTP/1.1" 200 0
+INFO 2018-11-22 21:07:41,701 basehttp 124 "PUT /email/ HTTP/1.1" 200 16
+INFO 2018-11-22 21:07:51,535 basehttp 124 "GET /emails/verification/?token=eyJhbGciOiJIUzUxMiIsImlhdCI6MTU0Mjg5MjA2MSwiZXhwIjoxNTQyODk1NjYxfQ.eyJ1c2VyX2lkIjo1LCJlbWFpbCI6Ijg3MTY5Mjc0NkBxcS5jb20ifQ.WaZnX6LZGtMNyF1pyd8yjMLzOOkdwCZfJ-y6MGV-D97yuu7c0AZBTo5Sci9YcEtOR1EPAK-rQJGbp99Vospppw HTTP/1.1" 200 16
+INFO 2018-11-22 21:07:59,062 basehttp 124 "GET /user/ HTTP/1.1" 200 103
+WARNING 2018-11-22 21:07:59,114 base 152 Not Found: /browse_histories/
+WARNING 2018-11-22 21:07:59,115 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3477
+INFO 2018-11-23 15:57:10,716 basehttp 124 "OPTIONS /authorizations/ HTTP/1.1" 200 0
+INFO 2018-11-23 15:57:10,930 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 240
+INFO 2018-11-23 15:57:13,777 basehttp 124 "OPTIONS /user/ HTTP/1.1" 200 0
+INFO 2018-11-23 15:57:13,895 basehttp 124 "GET /user/ HTTP/1.1" 200 104
+INFO 2018-11-23 15:57:14,001 basehttp 124 "OPTIONS /browse_histories/ HTTP/1.1" 200 0
+WARNING 2018-11-23 15:57:14,076 base 152 Not Found: /browse_histories/
+WARNING 2018-11-23 15:57:14,077 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3477
+INFO 2018-11-23 15:57:31,276 basehttp 124 "OPTIONS /email/ HTTP/1.1" 200 0
+INFO 2018-11-23 15:57:31,591 basehttp 124 "PUT /email/ HTTP/1.1" 200 16
+INFO 2018-11-23 16:15:29,384 basehttp 124 "OPTIONS /user/ HTTP/1.1" 200 0
+INFO 2018-11-23 16:15:29,582 basehttp 124 "GET /user/ HTTP/1.1" 200 104
+INFO 2018-11-23 16:15:29,660 basehttp 124 "OPTIONS /browse_histories/ HTTP/1.1" 200 0
+WARNING 2018-11-23 16:15:29,720 base 152 Not Found: /browse_histories/
+WARNING 2018-11-23 16:15:29,722 basehttp 124 "GET /browse_histories/ HTTP/1.1" 404 3477
+INFO 2018-11-23 16:15:30,585 basehttp 124 "OPTIONS /email/ HTTP/1.1" 200 0
+INFO 2018-11-23 16:15:30,841 basehttp 124 "PUT /email/ HTTP/1.1" 200 16
+INFO 2018-11-23 16:15:48,487 basehttp 124 "GET /emails/verification/?token=eyJhbGciOiJIUzUxMiIsImlhdCI6MTU0Mjk2MDkzMCwiZXhwIjoxNTQyOTY0NTMwfQ.eyJ1c2VyX2lkIjo1LCJlbWFpbCI6Ijg3MTY5Mjc0NkBxcS5jb20ifQ.p2CoJiXHUs2fNhAIOjWyEH01WsDRcV7fA9oHsoroKrE7SQO4nmpo8-_aKnr34T-YfWUusBcRcuCVByOVLNHdXw HTTP/1.1" 200 16

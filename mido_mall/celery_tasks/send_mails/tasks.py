@@ -7,15 +7,12 @@ from itsdangerous import TimedJSONWebSignatureSerializer as TS
 @app.task(name='send_email')
 def send_email(user_id,email):
     # 给邮箱发送邮件
-
-
     ts = TS(settings.SECRET_KEY, expires_in=60 * 60 * 1)  # 邮箱验证过期时间1小时
     data = {
         'user_id': user_id,
         'email': email
     }
     token = ts.dumps(data).decode()
-
     # token='test_token'    #加密的数据
     subject = 'MIDO_MALL 邮箱验证'
     message = ''
