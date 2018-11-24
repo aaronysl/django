@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     #注册cors
     'corsheaders',
 
+    'django_crontab',   #定时任务
+
     'users.apps.UsersConfig',
     'verifications.apps.VerificationsConfig',
     'oauth.apps.OauthConfig',
@@ -295,3 +297,14 @@ DEFAULT_FILE_STORAGE = 'mido_mall.utils.fastdfs.fdfs_storage.FastDFSStorage'
 # 静态文件目录
 GENERATED_STATIC_HTML_FILES_DIR = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)), 'front_end_pc')
 
+# 定时任务
+CRONJOBS = [
+    # 每5分钟执行一次生成主页静态文件
+    # 任务触发时间,具体任务函数,日志输出位置
+    ('*/5 * * * *', 'contents.crons.generate_static_index_html',
+     '>> ' + os.path.join(os.path.dirname(BASE_DIR), "logs/crontab.log"))
+]
+
+
+# 解决crontab中文问题
+CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'
