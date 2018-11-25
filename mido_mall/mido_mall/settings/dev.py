@@ -231,6 +231,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+    # 分页
+    'DEFAULT_PAGINATION_CLASS': 'mido_mall.utils.pagination.StandardResultsSetPagination',
 }
 
 #token 过期时间
