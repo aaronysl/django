@@ -6,11 +6,14 @@ from rest_framework.views import APIView
 from rest_framework.viewsets import ViewSet, GenericViewSet
 from rest_framework_jwt.settings import api_settings
 from django.db.models import Q
+from django_redis import get_redis_connection
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import GenericAPIView,RetrieveAPIView,UpdateAPIView
 
 from .models import User,Address
 from . import serializers
+from goods.models import SKU
+from goods.serializers import SkuSerializer
 from celery_tasks.send_mails.tasks import send_email
 # url(r'^usernames/(?P<username>\w{5,20})/count/$', views.UsernameCountView.as_view()),
 
@@ -242,6 +245,48 @@ class UserAddressApiView(GenericViewSet):
         address.save()
         return Response(serializers.UserAddressSerializer(address).data)
 
+class UserHistory(APIView):
+    permission_classes = (IsAuthenticated,)     # 用户必须是已登录
+
+    def post(self, request):
+        # sku_id
+        sku_id = request.data.get('sku_id', 0)
+        # 判断是否存在
+        try:
+            SKU.objects.get(id=sku_id)
+        except Exception:
+            return Response({'error': "商品不存在"}, status=400)
+
+        user_id = request.user.id
+
+        conn = get_redis_connection('history')
+        pipeline = conn.pipeline()
+
+        # 删除指定sku_id
+        pipeline.lrem('history_%d' % user_id, 0, sku_id)
+
+        # 添加sku_id
+        pipeline.lpush('history_%d' % user_id, sku_id)
+
+        # 只保留5条数据
+        pipeline.ltrim('history_%d' % user_id, 0, 5)
+
+        pipeline.execute()
+
+        return Response({'message': 'OK'})
+
+    def get(self, request):
+        user_id = request.user.id
+        conn = get_redis_connection('history')
+        sku_ids = conn.lrange('history_%d' % user_id, 0, 5)
+
+        skus = []
+        for sku_id in sku_ids:
+            skus.append(SKU.objects.get(id=sku_id))
+
+        serializer = SkuSerializer(skus, many=True)
+
+        return Response(serializer.data)
 
 
 

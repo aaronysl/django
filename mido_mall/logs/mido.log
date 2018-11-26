@@ -1518,3 +1518,59 @@ INFO 2018-11-26 18:51:28,573 basehttp 124 "GET /skus/search/?text=%E5%8D%8E HTTP
 INFO 2018-11-26 18:51:48,433 basehttp 124 "GET /skus/search/?text=apple HTTP/1.1" 200 1169
 INFO 2018-11-26 18:52:18,829 basehttp 124 "GET /skus/search/?text=apple&page=2 HTTP/1.1" 200 762
 INFO 2018-11-26 18:52:38,774 basehttp 124 "GET /skus/search/?text=apple&page=1 HTTP/1.1" 200 1169
+INFO 2018-11-26 18:58:02,992 basehttp 124 "OPTIONS /cart/ HTTP/1.1" 200 0
+WARNING 2018-11-26 18:58:02,977 base 152 Not Found: /categories/115/
+WARNING 2018-11-26 18:58:03,021 base 152 Not Found: /categories/115/hotskus/
+WARNING 2018-11-26 18:58:03,024 basehttp 124 "GET /categories/115/hotskus/ HTTP/1.1" 404 6065
+WARNING 2018-11-26 18:58:03,027 basehttp 124 "GET /categories/115/ HTTP/1.1" 404 6041
+WARNING 2018-11-26 18:58:03,071 base 152 Not Found: /cart/
+WARNING 2018-11-26 18:58:03,079 basehttp 124 "GET /cart/ HTTP/1.1" 404 6011
+INFO 2018-11-26 18:58:03,112 basehttp 124 "GET /categories/115/skus/?page=1&page_size=5&ordering=-create_time HTTP/1.1" 200 1321
+WARNING 2018-11-26 19:00:08,392 base 152 Not Found: /categories/115/
+WARNING 2018-11-26 19:00:08,397 base 152 Not Found: /cart/
+WARNING 2018-11-26 19:00:08,405 base 152 Not Found: /categories/115/hotskus/
+WARNING 2018-11-26 19:00:08,409 basehttp 124 "GET /categories/115/ HTTP/1.1" 404 6041
+WARNING 2018-11-26 19:00:08,413 basehttp 124 "GET /cart/ HTTP/1.1" 404 6011
+WARNING 2018-11-26 19:00:08,415 basehttp 124 "GET /categories/115/hotskus/ HTTP/1.1" 404 6065
+INFO 2018-11-26 19:00:08,449 basehttp 124 "GET /categories/115/skus/?page=1&page_size=5&ordering=-create_time HTTP/1.1" 200 1321
+INFO 2018-11-26 19:15:07,943 basehttp 124 "OPTIONS /cart/ HTTP/1.1" 200 0
+WARNING 2018-11-26 19:15:07,984 base 152 Not Found: /categories/115/hotskus/
+WARNING 2018-11-26 19:15:07,982 base 152 Not Found: /categories/115/
+WARNING 2018-11-26 19:15:07,992 base 152 Not Found: /cart/
+WARNING 2018-11-26 19:15:07,993 basehttp 124 "GET /categories/115/hotskus/ HTTP/1.1" 404 6232
+WARNING 2018-11-26 19:15:07,994 basehttp 124 "GET /categories/115/ HTTP/1.1" 404 6208
+WARNING 2018-11-26 19:15:07,994 basehttp 124 "GET /cart/ HTTP/1.1" 404 6178
+INFO 2018-11-26 19:15:08,047 basehttp 124 "GET /categories/115/skus/?page=1&page_size=5&ordering=-create_time HTTP/1.1" 200 1321
+INFO 2018-11-26 19:18:04,815 basehttp 124 "OPTIONS /authorizations/ HTTP/1.1" 200 0
+INFO 2018-11-26 19:18:05,181 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 240
+WARNING 2018-11-26 19:18:14,065 basehttp 124 "POST /browse_histories/ HTTP/1.1" 401 43
+WARNING 2018-11-26 19:18:31,541 basehttp 124 "POST /browse_histories/ HTTP/1.1" 401 43
+WARNING 2018-11-26 19:23:56,105 basehttp 124 "POST /browse_histories/ HTTP/1.1" 401 43
+WARNING 2018-11-26 19:27:10,063 basehttp 124 "POST /browse_histories/ HTTP/1.1" 401 43
+INFO 2018-11-26 19:35:16,323 basehttp 124 "OPTIONS /cart/ HTTP/1.1" 200 0
+WARNING 2018-11-26 19:35:16,373 base 152 Not Found: /categories/115/hotskus/
+WARNING 2018-11-26 19:35:16,379 base 152 Not Found: /categories/115/
+WARNING 2018-11-26 19:35:16,380 basehttp 124 "GET /categories/115/hotskus/ HTTP/1.1" 404 6232
+WARNING 2018-11-26 19:35:16,394 base 152 Not Found: /cart/
+WARNING 2018-11-26 19:35:16,397 basehttp 124 "GET /categories/115/ HTTP/1.1" 404 6208
+WARNING 2018-11-26 19:35:16,397 basehttp 124 "GET /cart/ HTTP/1.1" 404 6178
+INFO 2018-11-26 19:35:16,442 basehttp 124 "GET /categories/115/skus/?page=1&page_size=5&ordering=-create_time HTTP/1.1" 200 1321
+INFO 2018-11-26 19:35:17,905 basehttp 124 "OPTIONS /browse_histories/ HTTP/1.1" 200 0
+INFO 2018-11-26 19:35:18,062 basehttp 124 "POST /browse_histories/ HTTP/1.1" 200 16
+INFO 2018-11-26 19:35:21,192 basehttp 124 "OPTIONS /user/ HTTP/1.1" 200 0
+INFO 2018-11-26 19:35:21,261 basehttp 124 "GET /user/ HTTP/1.1" 200 103
+INFO 2018-11-26 19:35:21,347 basehttp 124 "GET /browse_histories/ HTTP/1.1" 200 238
+WARNING 2018-11-26 19:35:31,332 base 152 Not Found: /categories/115/
+WARNING 2018-11-26 19:35:31,341 base 152 Not Found: /cart/
+WARNING 2018-11-26 19:35:31,351 base 152 Not Found: /categories/115/hotskus/
+WARNING 2018-11-26 19:35:31,352 basehttp 124 "GET /categories/115/ HTTP/1.1" 404 6208
+WARNING 2018-11-26 19:35:31,352 basehttp 124 "GET /cart/ HTTP/1.1" 404 6178
+WARNING 2018-11-26 19:35:31,357 basehttp 124 "GET /categories/115/hotskus/ HTTP/1.1" 404 6232
+INFO 2018-11-26 19:35:31,382 basehttp 124 "GET /categories/115/skus/?page=1&page_size=5&ordering=-create_time HTTP/1.1" 200 1321
+INFO 2018-11-26 19:35:33,821 basehttp 124 "GET /categories/115/skus/?page=3&page_size=5&ordering=-create_time HTTP/1.1" 200 1033
+INFO 2018-11-26 19:35:35,437 basehttp 124 "POST /browse_histories/ HTTP/1.1" 200 16
+INFO 2018-11-26 19:35:38,618 basehttp 124 "GET /user/ HTTP/1.1" 200 103
+INFO 2018-11-26 19:35:38,721 basehttp 124 "GET /browse_histories/ HTTP/1.1" 200 458
+INFO 2018-11-26 19:36:08,011 basehttp 124 "GET /user/ HTTP/1.1" 200 103
+INFO 2018-11-26 19:36:08,129 basehttp 124 "GET /browse_histories/ HTTP/1.1" 200 458
+WARNING 2018-11-26 19:36:26,753 basehttp 124 "GET /browse_histories/ HTTP/1.1" 401 43
