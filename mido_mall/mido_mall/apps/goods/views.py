@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from drf_haystack.viewsets import HaystackViewSet
 from rest_framework.filters import OrderingFilter
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
@@ -6,7 +7,7 @@ from rest_framework.generics import ListAPIView
 
 from .models import SKU
 
-from .serializers import SkuSerializer
+from .serializers import SkuSerializer, SKUSearchSerializer
 
 
 # url(r'^/categories/(?P<category_id>\d+)/skus/$',SkuApiView.as_view())
@@ -25,3 +26,11 @@ class SkuApiView(ListAPIView):
     #     # 3. 构建序列化器
     #     # 4. 序列化返回
     #     pass
+
+
+class SKUSearchView(HaystackViewSet):
+    # 添加搜索的模型类
+    index_models = [SKU]
+
+    serializer_class = SKUSearchSerializer
+
