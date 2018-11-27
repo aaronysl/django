@@ -207,3 +207,48 @@ class UserCartView(APIView):
             response = Response(status=204)
             response.set_cookie('cart', json.dumps(cart), max_age=60 * 60 * 24 * 365)
             return response
+
+
+class CartSelectView(APIView):
+    def perform_authentication(self, request):
+        pass
+
+    def put(self, request):
+        # 获取数据
+        data = request.data
+        selected = data.get('selected', False)
+
+        # 判断用户是否登录
+        try:
+            user = request.user
+        except Exception:
+            # 异常说民用户未登录
+            user = None
+        if user is not None and user.is_authenticated:
+            conn = get_redis_connection('cart')
+            cart_id = 'cart_%d' % user.id
+            cart_selected_id = 'cart_selected_%d' % user.id
+            sku_ids = conn.hkeys(cart_id)  # 返回的是sku_id数组
+            if selected:
+                conn.sadd(cart_selected_id, *sku_ids)
+            else:
+                conn.srem(cart_selected_id, *sku_ids)
+            return Response({'message': 'OK'}, status=201)
+
+        else:
+            # 操作cookie
+            cart_cookie = request.COOKIES.get('cart', None)
+            if cart_cookie:
+                cart = json.loads(cart_cookie)
+            else:
+                cart = {}
+
+            for sku_id in cart:
+                if selected:
+                    cart[sku_id]['selected'] = True
+                else:
+                    cart[sku_id]['selected'] = False
+
+            response = Response({'message': 'OK'}, status=201)
+            response.set_cookie('cart', json.dumps(cart), max_age=60 * 60 * 24 * 365)
+            return response

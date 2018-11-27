@@ -12,6 +12,7 @@ from rest_framework_jwt.settings import api_settings
 from .models import OAuthQQUser
 from.utils import generate_save_user_token
 from .serializers import QQAuthUserSerializer
+from carts.utils import merge_cookie_cart_to_redis_cart
 
 
 class QQAuthURLView(APIView):
@@ -77,16 +78,17 @@ class QQAuthUserView(APIView):
 
             payload = jwt_payload_handler(oauth_user.user)
             token = jwt_encode_handler(payload)
-
-            return Response({
+            # 合并购物车数据
+            response = Response({
                 'username': username,
                 'user_id': user_id,
                 'token': token
             })
+            response = merge_cookie_cart_to_redis_cart(request, oauth_user.user, response)
+            return response
         else:
             return Response({
-                'access_token': generate_save_user_token(openid)  #加密
-                # 'access_token': openid  # 加密
+                'access_token': generate_save_user_token(openid)  # 加密
             })
 
     def post(self, request):
@@ -97,24 +99,28 @@ class QQAuthUserView(APIView):
         :param request:
         :return:
         """
-        data=request.data
+        data = request.data
 
-        serializer=QQAuthUserSerializer(data=data)
+        serializer = QQAuthUserSerializer(data=data)
 
         serializer.is_valid(raise_exception=True)
 
-        oauth_user=serializer.save()
+        oauth_user = serializer.save()
 
-        username=oauth_user.user.username
-        user_id=oauth_user.user.id
+        username = oauth_user.user.username
+        user_id = oauth_user.user.id
         jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
         jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 
         payload = jwt_payload_handler(oauth_user.user)
         token = jwt_encode_handler(payload)
 
-        return Response({
-            'username':username,
-            'user_id':user_id,
-            'token':token
+        token = jwt_encode_handler(payload)
+        # 合并购物车数据
+        response = Response({
+            'username': username,
+            'user_id': user_id,
+            'token': token
         })
+        response = merge_cookie_cart_to_redis_cart(request, oauth_user.user, response)
+        return response
