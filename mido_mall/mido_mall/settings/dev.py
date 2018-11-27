@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'goods.apps.GoodsConfig',
     'contents.apps.ContentsConfig',
     'carts.apps.CartsConfig',
+    'orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [
@@ -333,7 +334,7 @@ CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
-        'URL': 'http://192.168.30.56:9200/',  # 此处为elasticsearch运行的服务器ip地址，端口号固定为9200
+        'URL': 'http://127.0.0.1:9200/',  # 此处为elasticsearch运行的服务器ip地址，端口号固定为9200
         'INDEX_NAME': 'mido_mall',  # 指定elasticsearch建立的索引库的名称
     },
 }

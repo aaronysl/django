@@ -1859,3 +1859,1900 @@ INFO 2018-11-27 16:09:27,956 basehttp 124 "GET /cart/ HTTP/1.1" 200 2
 INFO 2018-11-27 16:09:28,826 basehttp 124 "GET /cart/ HTTP/1.1" 200 2
 INFO 2018-11-27 16:09:57,046 basehttp 124 "OPTIONS /user/ HTTP/1.1" 200 0
 WARNING 2018-11-27 16:09:57,234 basehttp 124 "GET /user/ HTTP/1.1" 401 37
+INFO 2018-11-27 16:41:03,460 basehttp 124 "OPTIONS /cart/ HTTP/1.1" 200 0
+INFO 2018-11-27 16:41:03,527 basehttp 124 "GET /cart/ HTTP/1.1" 200 2
+WARNING 2018-11-27 16:41:08,350 base 152 Not Found: /categories/115/
+WARNING 2018-11-27 16:41:08,357 basehttp 124 "GET /categories/115/ HTTP/1.1" 404 6853
+INFO 2018-11-27 16:41:08,359 basehttp 124 "GET /cart/ HTTP/1.1" 200 2
+WARNING 2018-11-27 16:41:08,377 base 152 Not Found: /categories/115/hotskus/
+WARNING 2018-11-27 16:41:08,378 basehttp 124 "GET /categories/115/hotskus/ HTTP/1.1" 404 6877
+INFO 2018-11-27 16:41:08,453 basehttp 124 "GET /categories/115/skus/?page=1&page_size=5&ordering=-create_time HTTP/1.1" 200 1321
+INFO 2018-11-27 16:41:11,722 basehttp 124 "POST /cart/ HTTP/1.1" 201 23
+INFO 2018-11-27 16:41:23,300 basehttp 124 "OPTIONS /authorizations/ HTTP/1.1" 200 0
+INFO 2018-11-27 16:41:23,385 basehttp 124 "POST /authorizations/ HTTP/1.1" 200 240
+INFO 2018-11-27 16:41:25,857 basehttp 124 "GET /cart/ HTTP/1.1" 200 736
+INFO 2018-11-27 16:41:34,226 basehttp 124 "OPTIONS /cart/selection/ HTTP/1.1" 200 0
+INFO 2018-11-27 16:41:34,245 basehttp 124 "PUT /cart/selection/ HTTP/1.1" 201 16
+INFO 2018-11-27 16:41:35,465 basehttp 124 "OPTIONS /addresses/ HTTP/1.1" 200 0
+INFO 2018-11-27 16:41:35,466 basehttp 124 "OPTIONS /orders/settlement/ HTTP/1.1" 200 0
+INFO 2018-11-27 16:41:35,565 basehttp 124 "GET /orders/settlement/ HTTP/1.1" 200 707
+INFO 2018-11-27 16:41:35,586 basehttp 124 "GET /addresses/ HTTP/1.1" 200 391
+INFO 2018-11-27 16:41:42,464 basehttp 124 "OPTIONS /orders/ HTTP/1.1" 200 0
+ERROR 2018-11-27 16:41:42,898 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f785438>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f785438>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f785438>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:41:43,105 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:41:46,921 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f7850f0>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f7850f0>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f7850f0>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:41:46,961 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:41:53,316 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f899240>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f899240>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f899240>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:41:56,908 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:42:23,610 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f899748>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f899748>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f899748>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:42:23,687 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+INFO 2018-11-27 16:43:06,064 basehttp 124 "GET /orders/settlement/ HTTP/1.1" 200 707
+INFO 2018-11-27 16:43:06,088 basehttp 124 "GET /addresses/ HTTP/1.1" 200 391
+ERROR 2018-11-27 16:43:09,145 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f8c42e8>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f8c42e8>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f8c42e8>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:43:09,294 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:43:10,261 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f8c4da0>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f8c4da0>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f8c4da0>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:43:10,321 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:43:22,483 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f8de860>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f8de860>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f8de860>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:43:22,521 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:43:23,395 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f5961d0>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f5961d0>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f5961d0>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:43:23,447 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+INFO 2018-11-27 16:43:36,450 basehttp 124 "GET /cart/ HTTP/1.1" 200 733
+INFO 2018-11-27 16:43:38,960 basehttp 124 "GET /orders/settlement/ HTTP/1.1" 200 707
+INFO 2018-11-27 16:43:38,978 basehttp 124 "GET /addresses/ HTTP/1.1" 200 391
+ERROR 2018-11-27 16:43:41,726 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f8d80b8>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f8d80b8>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f8d80b8>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:43:41,849 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:43:45,035 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10fa039b0>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10fa039b0>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10fa039b0>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:43:45,074 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:43:45,330 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f8f0c18>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f8f0c18>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f8f0c18>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:43:45,378 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:43:46,385 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f8997b8>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f8997b8>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f8997b8>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:43:46,426 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:43:47,035 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f89c588>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f89c588>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f89c588>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:43:47,070 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+INFO 2018-11-27 16:45:11,171 basehttp 124 "GET /orders/settlement/ HTTP/1.1" 200 707
+INFO 2018-11-27 16:45:11,185 basehttp 124 "GET /addresses/ HTTP/1.1" 200 391
+INFO 2018-11-27 16:45:21,834 basehttp 124 "GET /orders/settlement/ HTTP/1.1" 200 707
+INFO 2018-11-27 16:45:21,850 basehttp 124 "GET /addresses/ HTTP/1.1" 200 391
+ERROR 2018-11-27 16:45:23,632 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f899518>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f899518>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f899518>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:45:23,790 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:45:24,669 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f589080>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f589080>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f589080>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:45:24,704 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:45:24,897 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f7b9b70>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f7b9b70>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f7b9b70>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:45:24,953 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+ERROR 2018-11-27 16:45:30,700 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10f87bf60>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10f87bf60>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10f87bf60>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:45:30,740 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+INFO 2018-11-27 16:45:39,648 basehttp 124 "GET /cart/ HTTP/1.1" 200 733
+INFO 2018-11-27 16:45:42,758 basehttp 124 "DELETE /cart/ HTTP/1.1" 204 0
+INFO 2018-11-27 16:45:44,004 basehttp 124 "DELETE /cart/ HTTP/1.1" 204 0
+INFO 2018-11-27 16:45:45,087 basehttp 124 "GET /orders/settlement/ HTTP/1.1" 200 257
+INFO 2018-11-27 16:45:45,097 basehttp 124 "GET /addresses/ HTTP/1.1" 200 391
+ERROR 2018-11-27 16:45:47,730 exception 135 Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 95, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/util/retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/urllib3/connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10fa012b0>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 495, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 455, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/views.py", line 492, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/generics.py", line 192, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/mixins.py", line 26, in perform_create
+    serializer.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/rest_framework/serializers.py", line 214, in save
+    self.instance = self.create(validated_data)
+  File "/Users/yinshuanglong/Desktop/mido/mido_mall/mido_mall/apps/orders/serializers.py", line 78, in create
+    sku.save()
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 808, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/db/models/base.py", line 848, in save_base
+    update_fields=update_fields, raw=raw, using=using,
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/django/dispatch/dispatcher.py", line 193, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/signals.py", line 52, in handle_save
+    index.update_object(instance, using=using)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/indexes.py", line 284, in update_object
+    backend.update(self, [instance])
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/haystack/backends/elasticsearch_backend.py", line 190, in update
+    bulk(self.conn, prepped_docs, index=self.index_name, doc_type='modelresult')
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 190, in bulk
+    for ok, item in streaming_bulk(client, actions, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 162, in streaming_bulk
+    for result in _process_bulk_chunk(client, bulk_actions, raise_on_exception, raise_on_error, **kwargs):
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 91, in _process_bulk_chunk
+    raise e
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/helpers/__init__.py", line 87, in _process_bulk_chunk
+    resp = client.bulk('\n'.join(bulk_actions) + '\n', **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 69, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 785, in bulk
+    doc_type, '_bulk'), params=params, body=self._bulk_body(body))
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/transport.py", line 327, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/Users/yinshuanglong/dj/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 106, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10fa012b0>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10fa012b0>: Failed to establish a new connection: [Errno 61] Connection refused)
+ERROR 2018-11-27 16:45:47,859 basehttp 124 "POST /orders/ HTTP/1.1" 500 25186
+INFO 2018-11-27 16:50:10,172 basehttp 124 "GET /orders/settlement/ HTTP/1.1" 200 257
+INFO 2018-11-27 16:50:10,191 basehttp 124 "GET /addresses/ HTTP/1.1" 200 391
+INFO 2018-11-27 16:51:37,529 basehttp 124 "OPTIONS /orders/settlement/ HTTP/1.1" 200 0
+INFO 2018-11-27 16:51:37,530 basehttp 124 "OPTIONS /addresses/ HTTP/1.1" 200 0
+INFO 2018-11-27 16:51:41,245 basehttp 124 "POST /orders/ HTTP/1.1" 201 38
+INFO 2018-11-27 16:52:34,549 basehttp 124 "OPTIONS /cart/ HTTP/1.1" 200 0
+INFO 2018-11-27 16:52:34,661 basehttp 124 "GET /cart/ HTTP/1.1" 200 2
+INFO 2018-11-27 16:55:08,411 basehttp 124 "GET /cart/ HTTP/1.1" 200 2
+INFO 2018-11-27 16:55:15,037 basehttp 124 "GET /oauth/qq/authorization/?next=/ HTTP/1.1" 200 175
+INFO 2018-11-27 16:55:26,599 basehttp 124 "GET /oauth/qq/user/?code=2DDE986913D8596E11762F0232A70AB4 HTTP/1.1" 200 226
+INFO 2018-11-27 16:55:29,203 basehttp 124 "OPTIONS /user/ HTTP/1.1" 200 0
+WARNING 2018-11-27 16:55:29,329 basehttp 124 "GET /user/ HTTP/1.1" 401 37
+INFO 2018-11-27 16:55:38,067 basehttp 124 "GET /oauth/qq/authorization/?next=/user_center_info.html HTTP/1.1" 200 196
+INFO 2018-11-27 16:55:47,594 basehttp 124 "GET /oauth/qq/user/?code=59C3E2F2798E9066CB815FC0B8DD5E9A HTTP/1.1" 200 226
+INFO 2018-11-27 16:55:47,754 basehttp 124 "OPTIONS /user/ HTTP/1.1" 200 0
+WARNING 2018-11-27 16:55:47,867 basehttp 124 "GET /user/ HTTP/1.1" 401 37
+INFO 2018-11-27 16:55:53,962 basehttp 124 "OPTIONS /cart/ HTTP/1.1" 200 0
+INFO 2018-11-27 16:55:54,009 basehttp 124 "GET /cart/ HTTP/1.1" 200 2
+INFO 2018-11-27 16:55:55,769 basehttp 124 "OPTIONS /addresses/ HTTP/1.1" 200 0
+INFO 2018-11-27 16:55:55,769 basehttp 124 "OPTIONS /orders/settlement/ HTTP/1.1" 200 0
+WARNING 2018-11-27 16:55:55,842 basehttp 124 "GET /addresses/ HTTP/1.1" 401 37
+WARNING 2018-11-27 16:55:55,846 basehttp 124 "GET /orders/settlement/ HTTP/1.1" 401 37
+WARNING 2018-11-27 16:55:58,392 basehttp 124 "GET /orders/settlement/ HTTP/1.1" 401 37
+WARNING 2018-11-27 16:55:58,393 basehttp 124 "GET /addresses/ HTTP/1.1" 401 37
+WARNING 2018-11-27 16:56:20,640 basehttp 124 "GET /addresses/ HTTP/1.1" 401 37
+WARNING 2018-11-27 16:56:20,643 basehttp 124 "GET /orders/settlement/ HTTP/1.1" 401 37
+WARNING 2018-11-27 16:56:25,703 basehttp 124 "GET /addresses/ HTTP/1.1" 401 37
+WARNING 2018-11-27 16:56:25,706 basehttp 124 "GET /orders/settlement/ HTTP/1.1" 401 37
