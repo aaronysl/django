@@ -60,29 +60,43 @@ class OrderCreateSerializer(serializers.Serializer):
                 order.save()
 
                 for sku_id in cart_selected_ids:
-                    sku = SKU.objects.get(id=int(sku_id))
-                    count = int(sku_ids[sku_id])
-                    price = sku.price
-                    # 判断商品库存
-                    if count > sku.stock:
-                        raise serializers.ValidationError('%s 库存不足' % sku.name)
+                    lool_time = 0
+                    while True:
+                        sku = SKU.objects.get(id=int(sku_id))
+                        count = int(sku_ids[sku_id])
+                        price = sku.price
+                        # 判断商品库存
+                        if count > sku.stock:
+                            raise serializers.ValidationError('%s 库存不足' % sku.name)
 
-                    # 更新库存
-                    last_stock = sku.stock - count
-                    # 计算总价
-                    total_amount += price * Decimal(count)
-                    # 计算商品总数
-                    total_count += count
+                        # 更新库存
+                        sku_stock = sku.stock
+                        last_stock = sku.stock - count
+                        # 计算总价
+                        total_amount += price * Decimal(count)
+                        # 计算商品总数
+                        total_count += count
 
-                    sku.stock = last_stock
-                    sku.save()
-                    # 保存订单详情
-                    order_goods = OrderGoods()
-                    order_goods.order = order
-                    order_goods.sku = sku
-                    order_goods.count = count
-                    order_goods.price = price
-                    order_goods.save()
+                        # sku.stock = last_stock
+                        # sku.save()
+                        #更新的时候判断库存是否被修改
+                        update_count = SKU.objects.filter(id=sku.id, stock=sku_stock).update(stock=last_stock)
+
+                        if update_count == 0:
+                            # 说明商品库存已经被修改
+                            lool_time += 1
+                            if lool_time >= 5:
+                                raise Exception('当前业务繁忙,轻稍后再试')
+                            continue
+
+                        # 保存订单详情
+                        order_goods = OrderGoods()
+                        order_goods.order = order
+                        order_goods.sku = sku
+                        order_goods.count = count
+                        order_goods.price = price
+                        order_goods.save()
+                        break
                 # 更新订单总价和商品总数
                 order.total_amount = total_amount
                 order.total_count = total_count
